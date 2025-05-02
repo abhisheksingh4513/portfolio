@@ -10,6 +10,7 @@ import Education from './sections/Education'
 import Achievements from './sections/Achievements'
 import Skills from './sections/Skills'
 import ParticleBackground from './components/ParticleBackground'
+import profileImage from '../public/profile.jpg'
 
 const GlobalStyle = styled.div`
   * {
@@ -332,7 +333,7 @@ function App() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <img src="/profile.jpg" alt="Abhishek Singh" />
+                <img src={profileImage} alt="Abhishek Singh" />
               </ProfileImage>
             </HeroContent>
           </HeroSection>
