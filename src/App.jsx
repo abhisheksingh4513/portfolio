@@ -10,7 +10,7 @@ import Education from './sections/Education'
 import Achievements from './sections/Achievements'
 import Skills from './sections/Skills'
 import ParticleBackground from './components/ParticleBackground'
-import profileImage from '../public/profile.jpg'
+import profileImage from '/profile.jpg'
 
 const GlobalStyle = styled.div`
   * {
