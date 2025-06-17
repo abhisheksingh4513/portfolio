@@ -7,6 +7,7 @@ import About from './sections/About'
 import Projects from './sections/Projects'
 import Contact from './sections/Contact'
 import Education from './sections/Education'
+import Experience from './sections/Experience'
 import Achievements from './sections/Achievements'
 import Skills from './sections/Skills'
 import ParticleBackground from './components/ParticleBackground'
@@ -54,6 +55,9 @@ const Navbar = styled(motion.nav)`
   z-index: 100;
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+  @media (max-width: 768px) {
+    padding: 0 18px;
+  }
 `
 
 const Logo = styled(motion.div)`
@@ -82,9 +86,71 @@ const Logo = styled(motion.div)`
   }
 `
 
+const Hamburger = styled.button`
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 200;
+  @media (max-width: 768px) {
+    display: flex;
+  }
+  span {
+    width: 24px;
+    height: 3px;
+    background: #64ffda;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+`
+
+const MobileMenu = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70vw;
+    height: 100vh;
+    background: #0a192f;
+    box-shadow: -2px 0 20px rgba(2,12,27,0.7);
+    z-index: 150;
+    padding: 80px 30px 30px 30px;
+    gap: 2rem;
+    animation: slideIn 0.3s;
+  }
+  @keyframes slideIn {
+    from { right: -100vw; }
+    to { right: 0; }
+  }
+`
+
+const MobileNavLink = styled.a`
+  color: #ccd6f6;
+  font-size: 1.2rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #112240;
+  text-decoration: none;
+  transition: color 0.2s;
+  &:hover {
+    color: #64ffda;
+  }
+`
+
 const NavLinks = styled.div`
   display: flex;
   gap: 2rem;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const NavLink = styled(motion.a)`
@@ -248,6 +314,7 @@ const linkVariants = {
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
+  const [menuOpen, setMenuOpen] = useState(false)
   const navLinks = [
     { href: "#about", text: "About" },
     { href: "#education", text: "Education" },
@@ -256,6 +323,11 @@ function App() {
     { href: "#achievements", text: "Achievements" },
     { href: "#contact", text: "Contact" }
   ]
+
+  const handleMobileNav = (href) => {
+    setActiveSection(href.slice(1))
+    setMenuOpen(false)
+  }
 
   return (
     <GlobalStyle>
@@ -272,6 +344,11 @@ function App() {
           >
             AS
           </Logo>
+          <Hamburger onClick={() => setMenuOpen(!menuOpen)} aria-label="Open navigation menu">
+            <span style={{ transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
+            <span style={{ opacity: menuOpen ? 0 : 1 }} />
+            <span style={{ transform: menuOpen ? 'rotate(-45deg) translate(7px, -6px)' : 'none' }} />
+          </Hamburger>
           <NavLinks>
             {navLinks.map((link, i) => (
               <NavLink
@@ -290,6 +367,19 @@ function App() {
               </NavLink>
             ))}
           </NavLinks>
+          {menuOpen && (
+            <MobileMenu>
+              {navLinks.map((link) => (
+                <MobileNavLink
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => handleMobileNav(link.href)}
+                >
+                  {link.text}
+                </MobileNavLink>
+              ))}
+            </MobileMenu>
+          )}
         </Navbar>
 
         <MainContent>
@@ -308,7 +398,7 @@ function App() {
                   user-friendly interfaces and robust backend solutions.
                 </p>
                 <SocialLinks>
-                  <SocialLink href="https://github.com/abhisheksingh4513?tab=repositories" target="_blank" rel="noopener noreferrer">
+                  <SocialLink href="https://github.com/abhisheksingh4513" target="_blank" rel="noopener noreferrer">
                     <FaGithub />
                   </SocialLink>
                   <SocialLink href="https://www.linkedin.com/in/abhishek-singh-ba5a59257/" target="_blank" rel="noopener noreferrer">
@@ -340,6 +430,7 @@ function App() {
 
           <About />
           <Education />
+          <Experience />
           <Projects />
           <Skills />
           <Achievements />

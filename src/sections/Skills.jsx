@@ -20,7 +20,9 @@ import {
   SiNumpy, 
   SiPandas,
   SiTailwindcss,
-  SiExpress
+  SiExpress,
+  SiFirebase,
+  SiPostgresql
 } from 'react-icons/si'
 
 const SkillsSection = styled.section`
@@ -125,11 +127,14 @@ function Skills() {
       icon: <FaDatabase />,
       skills: [
         { name: "MySQL", icon: <SiMysql /> },
-        { name: "MongoDB", icon: <SiMongodb /> }
+        { name: "MongoDB", icon: <SiMongodb /> },
+        { name: "PostgreSQL", icon: <SiPostgresql /> },
+        { name: "Firebase", icon: <SiFirebase /> },
+        { name: "Convex", icon: <FaDatabase /> }
       ]
     },
     {
-      category: "Frontend Development",
+      category: "Frontend Development & Tools",
       icon: <FaPalette />,
       skills: [
         { name: "HTML5", icon: <FaHtml5 /> },

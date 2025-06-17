@@ -5,6 +5,9 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 const ProjectsSection = styled.section`
   min-height: 100vh;
   padding: 100px 0;
+  @media (max-width: 600px) {
+    padding: 60px 0 30px 0;
+  }
 `
 
 const SectionTitle = styled(motion.h2)`
@@ -13,6 +16,10 @@ const SectionTitle = styled(motion.h2)`
   margin-bottom: 3rem;
   position: relative;
   text-align: center;
+  @media (max-width: 600px) {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
 `
 
 const ProjectsGrid = styled.div`
@@ -22,6 +29,10 @@ const ProjectsGrid = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 50px;
+  @media (max-width: 600px) {
+    padding: 0 10px;
+    gap: 1.2rem;
+  }
 `
 
 const ProjectCard = styled(motion.div)`
@@ -34,6 +45,9 @@ const ProjectCard = styled(motion.div)`
   &:hover {
     transform: translateY(-5px);
   }
+  @media (max-width: 600px) {
+    padding: 1.1rem;
+  }
 `
 
 const ProjectHeader = styled.div`
@@ -41,11 +55,19 @@ const ProjectHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 `
 
 const ProjectLinks = styled.div`
   display: flex;
   gap: 1rem;
+  @media (max-width: 600px) {
+    gap: 0.5rem;
+  }
 `
 
 const ProjectLink = styled.a`
@@ -56,12 +78,18 @@ const ProjectLink = styled.a`
   &:hover {
     color: #8892b0;
   }
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
 `
 
 const ProjectTitle = styled.h3`
   color: #ccd6f6;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  @media (max-width: 600px) {
+    font-size: 1.1rem;
+  }
 `
 
 const ProjectSubtitle = styled.h4`
@@ -69,6 +97,10 @@ const ProjectSubtitle = styled.h4`
   font-size: 1rem;
   font-style: italic;
   margin-bottom: 1rem;
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+    margin-bottom: 0.7rem;
+  }
 `
 
 const ProjectDescription = styled.div`
@@ -93,6 +125,10 @@ const ProjectDescription = styled.div`
       }
     }
   }
+  @media (max-width: 600px) {
+    font-size: 0.92rem;
+    margin-bottom: 1rem;
+  }
 `
 
 const TechList = styled.ul`
@@ -102,6 +138,9 @@ const TechList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+  @media (max-width: 600px) {
+    gap: 0.5rem;
+  }
 `
 
 const TechItem = styled.li`
@@ -111,6 +150,10 @@ const TechItem = styled.li`
   background: rgba(100, 255, 218, 0.1);
   padding: 0.5rem 1rem;
   border-radius: 4px;
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.7rem;
+  }
 `
 
 function Projects() {
