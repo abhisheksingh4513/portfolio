@@ -158,6 +158,7 @@ const TechItem = styled.li`
 
 function Projects() {
   const projects = [
+    
     {
       title: 'User Authentication System (JWT)',
       description: [
@@ -203,6 +204,20 @@ function Projects() {
       tech: ['Python', 'FastAPI', 'JWT', 'BCrypt', 'Swagger/OpenAPI', 'Role-Based Access Control', 'Email Verification', 'Postman'],
       github: 'https://github.com/abhisheksingh4513/Secure-sharing-system_2200330100014',
       live: '#'
+    },{
+      title: 'ADmyBRAND Insights Dashboard',
+      subtitle: 'Full-Stack Analytics Dashboard',
+      description: [
+        'Built full-stack analytics dashboard using Next.js 15, TypeScript, and Tailwind CSS with 13+ reusable components',
+        'Implemented interactive data visualizations with Recharts library, displaying real-time metrics and business insights',
+        'Developed responsive UI/UX with dark/light theme toggle, mobile-first design, and accessibility compliance',
+        'Created advanced features including PDF/CSV export, data filtering, pagination, and website performance analysis',
+        'Deployed production application on Vercel with optimized performance and CI/CD integration',
+        'Integrated modern tech stack including shadcn/ui components, Next.js App Router, and TypeScript for type safety'
+      ],
+      tech: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Recharts', 'shadcn/ui', 'Vercel', 'App Router'],
+      github: '#',
+      live: 'https://ai-powered-analytics-dashboard-nyje08v27.vercel.app/'
     }
   ]
 
