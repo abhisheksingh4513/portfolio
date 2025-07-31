@@ -191,6 +191,18 @@ function Projects() {
       tech: ['Python', 'HTML', 'CSS', 'JavaScript', 'Speech Recognition', 'API Integration'],
       github: '#',
       live: '#'
+    },
+    {
+      title: 'Secure File Sharing System',
+      subtitle: 'Python, FastAPI',
+      description: [
+        'Developed a robust file sharing system with military-grade security features including JWT authentication, bcrypt password hashing, and encrypted one-time use download URLs, ensuring complete data protection and secure access control.',
+        'Role-Based Access Control Architecture: Engineered a sophisticated role-based permission system separating operations users (upload capabilities) from client users (download access), with mandatory email verification and strict endpoint protection based on user roles.',
+        'Comprehensive API Development: Created a complete RESTful API system with FastAPI featuring 8+ endpoints for authentication flows and file operations, documented with Swagger/OpenAPI, and thoroughly tested with a Postman collection suite for seamless integration.'
+      ],
+      tech: ['Python', 'FastAPI', 'JWT', 'BCrypt', 'Swagger/OpenAPI', 'Role-Based Access Control', 'Email Verification', 'Postman'],
+      github: 'https://github.com/abhisheksingh4513/Secure-sharing-system_2200330100014',
+      live: '#'
     }
   ]
 
