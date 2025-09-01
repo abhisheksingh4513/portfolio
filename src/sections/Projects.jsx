@@ -158,7 +158,20 @@ const TechItem = styled.li`
 
 function Projects() {
   const projects = [
-    
+    {
+      title: 'Notes App',
+      subtitle: 'Full-Stack Notes App',
+      description: [
+        'Developed a full-stack Notes App with a modern, responsive UI.',
+        'Implemented Google OAuth for secure and convenient user signup.',
+        'Integrated JWT (JSON Web Token) authentication for both login and signup processes.',
+        'Enabled users to create, edit, and delete notes efficiently.',
+        'Deployed the application to Vercel for fast and reliable hosting.'
+      ],
+      tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Google OAuth', 'Vercel'],
+      github: '#',
+      live: 'https://notes-app-bay-ten.vercel.app'
+    },
     {
       title: 'User Authentication System (JWT)',
       description: [
